@@ -29,7 +29,7 @@ Run `grunt` for building and `grunt serve` for preview.
 
 Running `grunt test` will run the unit tests with karma.
 
-¿Why don´t ignore gitignore specific files and directories?
+## ¿Why don´t ignore gitignore specific files and directories?
 
 * git rm -r --cached .
 * git add .

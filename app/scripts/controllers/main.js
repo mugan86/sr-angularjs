@@ -8,23 +8,29 @@
  * Controller of the serviraceApp
  */
 angular.module('serviraceApp')
-  .controller('MainCtrl', function ($q, $http, LOCALHOST, RACES, racesService) {
+  .controller('MainCtrl', function (racesService) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
-	racesService.getNextTwoMonthsRacesData()
+    racesService.getLastTrafficIncidents()
+            .then(function(data) {
+        console.log(data.length);
+        racesService.getNextTwoMonthsRacesData()
             .then(function(data) {
 
            console.log(data.length);
+        }, function(response) {
+            // something went wrong
+           console.log(response);
+        });
+    }, function(response) {
+        // something went wrong
+       console.log(response);
     });
 
-	
-
-            
-  
-
     
+
   });

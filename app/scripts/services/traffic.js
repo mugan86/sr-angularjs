@@ -8,7 +8,7 @@ angular.module('serviraceApp')
 
         var url = LOCALHOST+ 'traffic/get/last_incidents.php?ports=1';
 
-        return requestService.PostRequest(url);
+        return requestService.GetRequest(url);
       },
       getLastTrafficIncidents: function ()
       {

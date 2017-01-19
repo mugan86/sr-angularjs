@@ -59,7 +59,7 @@ angular
 
     console.log('LANG: '+ window.localStorage.getItem('language'));
 
-    if (window.localStorage.getItem('language') === null || window.localStorage.getItem('lang') === '')
+    if (window.localStorage.getItem('language') === null || window.localStorage.getItem('language') === '')
     {
       window.localStorage.setItem('language','en');
     }

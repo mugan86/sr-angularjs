@@ -9,12 +9,7 @@
  */
 angular.module('serviraceApp')
   .controller('MainCtrl', function (racesService, trafficService) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
+    
     racesService.getLastTrafficIncidents()
             .then(function(data) {
         console.log(data.length);
@@ -36,7 +31,4 @@ angular.module('serviraceApp')
         // something went wrong
        console.log(response);
     });
-
-    
-
-  });
+});

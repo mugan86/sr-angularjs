@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('serviraceApp')
-  .service('requestService', function requestService($http, $q) {
+  .service('requestService', function requestService($http, $q, responseService) {
     return {
       GetRequest: function(url) 
       {
@@ -9,14 +9,7 @@ angular.module('serviraceApp')
         console.log('Make GET REQUEST(*): ' + url);
 
         return $http.post(url).then(function(response) {
-            if (typeof response.data === 'object') {
-              console.log(response.data);
-                return response.data;
-            } else {
-                // invalid response
-                return $q.reject(response.data);
-            }
-
+            return responseService.Response(response);
             }, function(response) {
                 // something went wrong
                 return $q.reject(response.data);
@@ -29,19 +22,13 @@ angular.module('serviraceApp')
         console.log('Make POST REQUEST(*): ' + url);
 
         return $http.post(url).then(function(response) {
-            if (typeof response.data === 'object') {
-              console.log(response.data);
-                return response.data;
-            } else {
-                // invalid response
-                return $q.reject(response.data);
-            }
+            
+              return responseService.Response(response);
 
             }, function(response) {
                 // something went wrong
                 return $q.reject(response.data);
             });
       },
-
     };
   });

@@ -25,6 +25,10 @@ angular
 .config(['$qProvider', function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);
 }])
+.config(function($httpProvider) {
+    $httpProvider.defaults.headers.post  = { 'Accept': 'application/json',
+                                            'Content-Type': 'application/x-www-form-urlencoded'};
+})
 .config(function ($routeProvider, $locationProvider) {
 
 

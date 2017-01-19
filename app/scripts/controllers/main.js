@@ -8,7 +8,7 @@
  * Controller of the serviraceApp
  */
 angular.module('serviraceApp')
-  .controller('MainCtrl', function (racesService) {
+  .controller('MainCtrl', function (racesService, trafficService) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -20,8 +20,14 @@ angular.module('serviraceApp')
         console.log(data.length);
         racesService.getNextTwoMonthsRacesData()
             .then(function(data) {
-
-           console.log(data.length);
+            console.log(data.length);
+            trafficService.getPortsSituation()
+              .then(function(data){
+                console.log(data.length);
+              }, function(response) {
+                  // something went wrong
+                 console.log(response);
+              });
         }, function(response) {
             // something went wrong
            console.log(response);

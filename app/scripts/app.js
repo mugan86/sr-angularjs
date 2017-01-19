@@ -17,15 +17,19 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'pascalprecht.translate'
   ])
 
 //Remove UnhandledRejection in qprovider : http://stackoverflow.com/a/40366492/3655781
 .config(['$qProvider', function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);
 }])
-  .config(function ($routeProvider, $locationProvider) {
+.config(function ($routeProvider, $locationProvider) {
+
+
     $locationProvider.hashPrefix('');
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -41,4 +45,24 @@ angular
         redirectTo: '/'
       });
   })
+.config(['$translateProvider', function ($translateProvider) {
+
+    $translateProvider.translations('en', translations_en);
+   
+    $translateProvider.translations('es', translations_es);
+
+    $translateProvider.translations('eu', translations_eu);
+ 
+    $translateProvider.preferredLanguage(window.localStorage.getItem('language'));
+    // Enable escaping of HTML
+    $translateProvider.useSanitizeValueStrategy('escape');
+
+    console.log('LANG: '+ window.localStorage.getItem('language'));
+
+    if (window.localStorage.getItem('language') === null || window.localStorage.getItem('lang') === '')
+    {
+      window.localStorage.setItem('language','en');
+    }
+    
+}])
 ;

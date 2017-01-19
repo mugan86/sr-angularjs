@@ -20,4 +20,7 @@ angular.module('serviraceApp')
                         championships: 'race/get/championship.php',
                         cupsRacesSelect: 'race/get/cup_races.php?cup_code='
                     })
+.constant('INFO', {
+						stats: 'info/get/stats.php'
+					})
 ;

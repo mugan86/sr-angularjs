@@ -13,7 +13,8 @@ angular.module('serviraceApp')
 .constant('RACES', {
                         afterBefore: 'race/get/race_infov4.php',
                         championships: 'race/get/championship.php',
-                        cupsRacesSelect: 'race/get/cup_races.php?cup_code='
+                        cupsRacesSelect: 'race/get/cup_races.php?cup_code=',
+                        racesListAllWithFiltFromLastUpdate: 'race/get/race_list_json.php&page=${$page}'
                     })
 .constant('TRAFFIC', {
                         afterBefore: 'race/get/race_infov4.php',

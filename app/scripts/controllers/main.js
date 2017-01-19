@@ -10,7 +10,7 @@
 angular.module('serviraceApp')
   .controller('MainCtrl', function (racesService, trafficService) {
     
-    racesService.getLastTrafficIncidents()
+    trafficService.getLastTrafficIncidents()
             .then(function(data) {
         console.log(data.length);
         racesService.getNextTwoMonthsRacesData()

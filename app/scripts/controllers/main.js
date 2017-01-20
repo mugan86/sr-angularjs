@@ -30,7 +30,7 @@ angular.module('serviraceApp')
                     
     console.log(url_post_server_mugan);
 
-    $http.post(url_post_server_mugan, {race_name: 'aloñako_igoera', category_filt: 'cafe', service_distance: '2', circle_circuit: '1'})
+    $http.post(url_post_server_mugan, {race_name: 'aloñako_igoera', category_filt: 'restaurant', service_distance: '10', circle_circuit: '1'})
                 .then(function(response) {
     if (typeof response.data === 'object') {
       console.log(response);

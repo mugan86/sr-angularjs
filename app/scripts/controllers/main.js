@@ -26,24 +26,25 @@ angular.module('serviraceApp')
 
     var url = LOCALHOST + 'race/get/race_services_info_v3.php';//'race/get/race_photos.php'; //aloñako_igoera //anbotoko_kilometro_bertikala_-_kv_anboto
 
-    console.log(url);
+    var url_post_server_mugan = LOCALHOST + 'race/get/test_post.php';
+                    
+    console.log(url_post_server_mugan);
 
-    $http({
-     method: 'POST',
-     url: LOCALHOST +'race/get/race_services_info_v3.php',
-     data: {race_name: 'aloñako_igoera', circle_circuit: 1, service_distance: 4, category_filt: 'all'},
-     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-    }).then(function(response) {
+    $http.post(url_post_server_mugan, {race_name: 'aloñako_igoera', category_filt: 'cafe', service_distance: '2', circle_circuit: '1'})
+                .then(function(response) {
     if (typeof response.data === 'object') {
+      console.log(response);
       console.log(response.data);
       console.log(response.data.length);
         return response.data;
     } else {
+      console.log(response.data);
         // invalid response
         return $q.reject(response.data);
     }
 
     }, function(response) {
+      console.log(response);
         // something went wrong
         return $q.reject(response.data);
     });

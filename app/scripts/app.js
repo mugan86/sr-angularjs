@@ -28,6 +28,9 @@ angular
 .config(function($httpProvider) {
     $httpProvider.defaults.headers.post  = { 'Accept': 'application/json',
                                             'Content-Type': 'application/x-www-form-urlencoded'};
+
+    $httpProvider.defaults.headers.get  = { 'Accept': 'application/json',
+                                            'Content-Type': 'application/x-www-form-urlencoded'};
 })
 .config(function ($routeProvider, $locationProvider) {
 

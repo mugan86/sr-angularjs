@@ -6,16 +6,29 @@ angular.module('serviraceApp')
       getPortsSituation: function() 
       {
 
-        var url = LOCALHOST+ 'traffic/get/last_incidents.php?ports=1';
 
-        return requestService.GetRequest(url);
+        var data = { ports: 1};
+
+        var config = {
+         params: data
+        };
+        var url = LOCALHOST+ 'traffic/get/last_incidents.php';
+      
+
+        return requestService.GetRequestParams(url, config);
       },
       getLastTrafficIncidents: function ()
       {
-        var url = LOCALHOST+ 'traffic/get/last_incidents.php?ports=0';
+
+        var data = { ports: 0};
+
+        var config = {
+         params: data
+        };
+        var url = LOCALHOST+ 'traffic/get/last_incidents.php';
       
 
-        return requestService.GetRequest(url);
+        return requestService.GetRequestParams(url, config);
 
 
       }

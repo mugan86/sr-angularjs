@@ -7,6 +7,7 @@ angular.module('serviraceApp')
       {
 
         if (typeof response.data === 'object') {
+              console.log(response);
               console.log(response.data);
                 return response.data;
         } else {

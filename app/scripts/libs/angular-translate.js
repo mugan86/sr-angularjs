@@ -1,3 +1,4 @@
+'use strict';
 /*!
  * angular-translate - v2.9.0 - 2016-01-24
  * 

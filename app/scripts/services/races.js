@@ -37,6 +37,27 @@ angular.module('serviraceApp')
 
         return requestService.GetRequestParams(url, config);
       },
+      /*************************************************************************************
+              Return data to select last events.
+              EVENTS:
+              =================================================
+              * race
+              * opinion
+              * most_rated
+      **************************************************************************************/
+      getLastEvents: function (event, items)
+      {
+        var url = 'http://192.168.1.4/api-servirace/api/v2/race/get/last_events.php';
+
+        //Very important to send correctly params with GET
+        var data = { event: event, items: items};
+
+        var config = {
+          params: data
+        };
+
+        return requestService.GetRequestParams(url, config);
+      },
     };
 });
 

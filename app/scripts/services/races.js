@@ -18,6 +18,12 @@ angular.module('serviraceApp')
 
 
       },
+      getActiveChampionships: function ()
+      {
+        var url = 'http://192.168.1.4/api-servirace/api/v2/race/get/championship.php';
+
+        return requestService.GetRequest(url);
+      },
       getSelectChampionshipRaces: function (code)
       {
         var url = 'http://192.168.1.4/api-servirace/api/v2/race/get/cup_races.php';

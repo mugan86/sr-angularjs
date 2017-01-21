@@ -49,4 +49,13 @@ angular.module('serviraceApp')
        console.log(response);
     });
 
+	racesService.getLastEvents('race', 17)
+	        	.then(function(data) {
+    	console.log(data.length);
+
+    }, function(response) {
+        // something went wrong
+       console.log(response);
+    });
+
 });

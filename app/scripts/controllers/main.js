@@ -13,7 +13,7 @@ angular.module('serviraceApp')
 
     trafficService.getLastTrafficIncidents()
             .then(function(data) {
-        console.log(data.length);
+        	console.log(data.length);
 
 
         racesService.getSelectChampionshipRaces('goierri_trail_2017')
@@ -34,6 +34,15 @@ angular.module('serviraceApp')
 	        // something went wrong
 	       console.log(response);
 	    });
+
+    }, function(response) {
+        // something went wrong
+       console.log(response);
+    });
+
+  	racesService.getActiveChampionships()
+	        	.then(function(data) {
+    	console.log(data.length);
 
     }, function(response) {
         // something went wrong

@@ -8,10 +8,15 @@
  * Controller of the serviraceApp
  */
 angular.module('serviraceApp')
-  .controller('AboutCtrl', function () {
+  .controller('AboutCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+
+    $scope.openRaceInfo = function(id)
+    {
+    	window.alert(id);
+    };
   });

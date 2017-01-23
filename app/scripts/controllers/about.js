@@ -8,7 +8,7 @@
  * Controller of the serviraceApp
  */
 angular.module('serviraceApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutCtrl', function ($scope, youtubeServices) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -19,4 +19,13 @@ angular.module('serviraceApp')
     {
     	window.alert(id);
     };
+
+    youtubeServices.getLastNumberVideos(10, 1)
+     .then(function(data) {
+          console.log(data.length);
+
+        }, function(response) {
+            // something went wrong
+           console.log(response);
+        });
   });

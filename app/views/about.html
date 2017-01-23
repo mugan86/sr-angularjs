@@ -47,19 +47,19 @@
                         <div class="thumbnail">
                             <img src="{{video.snippet.thumbnails.high.url}}" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="#">First Product</a>
+                                <!--<h4 class="pull-right">$24.99</h4>-->
+                                <h4><a href="#">{{video.snippet.title | showOnlyIntroDescription}}</a>
                                 </h4>
-                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                <p>{{video.snippet.description | showOnlyIntroDescription}}</p>
                             </div>
                             <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
+                                <p class="pull-right">{{video.snippet.publishedAt | showCorrectDataTime}}</p>
                                 <p>
+                                    <span></span>
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                    <!--<span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>-->
                                 </p>
                             </div>
                         </div>

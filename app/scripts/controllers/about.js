@@ -20,9 +20,10 @@ angular.module('serviraceApp')
     	window.alert(id);
     };
 
-    youtubeServices.getLastNumberVideos(10, 1)
+    youtubeServices.getLastNumberVideos(11, 1)
      .then(function(data) {
           console.log(data.length);
+          $scope.videos = data;
 
         }, function(response) {
             // something went wrong

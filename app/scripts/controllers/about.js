@@ -9,22 +9,18 @@
  */
 angular.module('serviraceApp')
   .controller('AboutCtrl', function ($scope, youtubeServices) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
+    
     $scope.openRaceInfo = function(id)
     {
     	window.alert(id);
     };
 
-    youtubeServices.getLastNumberVideos(11, 3)
+    youtubeServices.getLastNumberVideos(12, 3)
      .then(function(data) {
-          console.log(data.length);
+          console.log(data.items.length);
           $scope.videos = data;
           $scope.token = data.nextPageToken;
+          $scope.items = data.items;
 
         }, function(response) {
             // something went wrong
@@ -33,20 +29,41 @@ angular.module('serviraceApp')
 
      $scope.getMorevideos = function()
      {
-        youtubeServices.getMoreVideosIfExist($scope.token, 11, 3)
+        if($scope.token !== -1)
+        {
+          youtubeServices.getMoreVideosIfExist($scope.token, 12, 3)
              .then(function(data) {
-                  console.log(data.length);
+                  console.log(data.items.length);
                   var videos_data = data;
-
-                  for (var i = 0; i < videos_data.length; i++)
+                  var items_video = data.items;
+                  if (data.nextPageToken !== null && data.nextPageToken !== undefined)
                   {
-                    $scope.videos.push(videos_data[i]);
+                    $scope.token = data.nextPageToken;
+                    console.log($scope.token);
                   }
-                  console.log($scope.videos.length + 'videos in total!!');
+                  else
+                  {
+                    $scope.token = -1;
+                  }
+                  
+
+                  for (var i = 0; i < items_video.length; i++)
+                  {
+                    console.log(items_video[i]);
+                    $scope.items.push(items_video[i]);
+                  }
+                  
+                  console.log('videos: ' + $scope.items.length);
 
                 }, function(response) {
                     // something went wrong
                    console.log(response);
                 });
+        } 
+        else
+        {
+          window.alert('Ez daude item gehiago!!');
+        }
+        
      };
   });

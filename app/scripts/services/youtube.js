@@ -86,6 +86,7 @@ angular.module('serviraceApp')
 			channelId = YOUTUBE.entrenoDelDiaChannelId;
 		}
       	var url = YOUTUBE.url + "search?part=snippet" + channelId + "&maxResults=" + items + "&pageToken=" + token + YOUTUBE.apiKey;
+//      	return requestService.GetRequest(url);
       	//https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCTOlN_wxzEUwQMLt8Cu--wg&maxResults=50&pageToken=CDIQAQ&key=AIzaSyDjSQp1NtdHgtAZT2_3gQADTnmpeppYdk8
       	return requestService.GetRequest(url);
       },

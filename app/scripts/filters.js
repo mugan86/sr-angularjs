@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('serviraceApp')
 
 .filter('showCorrectDataTime', function () {
@@ -11,8 +13,10 @@ angular.module('serviraceApp')
 .filter('showOnlyIntroDescription', function () {
         return function (text) {
             if (!text) {
-                return "Deskribapen gabe";
+                return "Deskribapen gabe<br/>Proposatu erabiltzaileari gehitzen";
             }
+
+            text = text.replace('==============================','');
             if (text.length > 80)
             {
             	return text.substring(0, 60) + '...';

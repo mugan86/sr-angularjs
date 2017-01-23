@@ -57,9 +57,13 @@ angular.module('serviraceApp')
 
       getLastNumberVideos: function (items, channel) {
       	var channelId = YOUTUBE.runneaChannelId;
-		if (channel > 1)
+		if (channel === 2)
 		{
 			channelId = YOUTUBE.mugan86ChannelId;
+		}
+		else if (channel === 3)
+		{
+			channelId = YOUTUBE.entrenoDelDiaChannelId;
 		}
         var url = YOUTUBE.url + "search?part=snippet" + channelId + "&maxResults=" + items + "&order=date" + YOUTUBE.apiKey;
         console.log(url);
@@ -67,8 +71,23 @@ angular.module('serviraceApp')
         //https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCTh7-deUJBNv2tHRiMGcXxg&maxResults=50&order=date&key=AIzaSyDjSQp1NtdHgtAZT2_3gQADTnmpeppYdk8
 
         return requestService.GetRequest(url);
-
         
+      },
+
+      getMoreVideosIfExist: function(token, items, channel)
+      {
+		var channelId = YOUTUBE.runneaChannelId;
+		if (channel === 2)
+		{
+			channelId = YOUTUBE.mugan86ChannelId;
+		}
+		else if (channel === 3)
+		{
+			channelId = YOUTUBE.entrenoDelDiaChannelId;
+		}
+      	var url = YOUTUBE.url + "search?part=snippet" + channelId + "&maxResults=" + items + "&pageToken=" + token + YOUTUBE.apiKey;
+      	//https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCTOlN_wxzEUwQMLt8Cu--wg&maxResults=50&pageToken=CDIQAQ&key=AIzaSyDjSQp1NtdHgtAZT2_3gQADTnmpeppYdk8
+      	return requestService.GetRequest(url);
       },
 
       getSelectVideo: function(id) {

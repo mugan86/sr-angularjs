@@ -10,7 +10,13 @@
 angular.module('serviraceApp')
 
 .constant('OPENWEATHER_APP_ID', '&APPID=58dda22dc16b4ec458a95a0a7f2e921d')
-.constant('YOUTUBE_API_KEY', 'AIzaSyBDMOCm6nX5P1KiotGWinHvBN3sozVjhRQ')
+.constant('YOUTUBE_API_KEY', 'AIzaSyDjSQp1NtdHgtAZT2_3gQADTnmpeppYdk8')
+.constant('YOUTUBE', {
+						url: 'https://www.googleapis.com/youtube/v3/',
+                        apiKey: '&key=AIzaSyDjSQp1NtdHgtAZT2_3gQADTnmpeppYdk8',
+						runneaChannelId: '&channelId=UC45pbpPWYVKXtK4wG5xELqA',
+						mugan86ChannelId: '&channelId=UCTh7-deUJBNv2tHRiMGcXxg',
+					})
 ;
 
 /*

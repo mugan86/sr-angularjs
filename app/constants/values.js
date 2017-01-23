@@ -16,6 +16,7 @@ angular.module('serviraceApp')
                         apiKey: '&key=AIzaSyDjSQp1NtdHgtAZT2_3gQADTnmpeppYdk8',
 						runneaChannelId: '&channelId=UC45pbpPWYVKXtK4wG5xELqA',
 						mugan86ChannelId: '&channelId=UCTh7-deUJBNv2tHRiMGcXxg',
+						entrenoDelDiaChannelId: '&channelId=UCwfL4oEAhskd1DpaOLiyQvw'
 					})
 ;
 

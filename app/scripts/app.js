@@ -48,6 +48,16 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+      .when('/contact', {
+        templateUrl: 'views/events.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'contact'
+      })
       .otherwise({
         redirectTo: '/'
       });

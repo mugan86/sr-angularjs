@@ -88,3 +88,11 @@ body {
 {
   margin-bottom: 2%;
 }
+
+/***************Videos list items **********/
+
+.element
+{
+  min-height: 400px;
+  height: 430px !important;
+}

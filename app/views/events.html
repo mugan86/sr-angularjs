@@ -43,3 +43,53 @@
       </p>
     </div>
   </div>
+ <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-10">
+        <form role="form" id="$index" class="base-form" ng-repeat="form in transforms track by $index">
+          <input type="checkbox" ng-model="oneAtATime" style="display:none">
+          <uib-accordion close-others="oneAtATime">
+
+            <div uib-accordion-group class="panel-default" is-open="transforms.wpformfields[$index].open " is-disabled="status.isFirstDisabled" ng-repeat="itemfield in form.wpformfields track by $index">
+              <uib-accordion-heading>
+                Transaction <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': transforms.wpformfields[$index].open, 'glyphicon-chevron-right': !transforms.wpformfields[$index].open}"></i>
+              </uib-accordion-heading>
+
+              <div class="md-col-10 main-container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Employee name </label>
+                      <input type="text" class="form-control" name="employee" id="employee" ng-model="itemfield.employee">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Amount </label>
+                      <input type="text" class="form-control" name="amount" id="amount" ng-model="itemfield.amount">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-default pull-right" ng-click="addTransaction(form, $index)"><i class="fa fa-floppy-o"></i> Save record</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </uib-accordion>
+          <div class="row">
+            <div class="col-md-12 col-md-offset-5">
+              <a class="btn btn-danger" ng-click="addtransactionForm(form)"><i class="fa fa-user-plus fa-lgt" ></i> Add new transaction record</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>

@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ui.bootstrap'
   ])
 
 //Remove UnhandledRejection in qprovider : http://stackoverflow.com/a/40366492/3655781

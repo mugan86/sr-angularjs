@@ -64,5 +64,4 @@ angular.module('serviraceApp')
   };
 
 
-
 });

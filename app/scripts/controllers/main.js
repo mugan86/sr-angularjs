@@ -8,7 +8,7 @@
  * Controller of the serviraceApp
  */
 angular.module('serviraceApp')
-  .controller('MainCtrl', function (racesService, trafficService) {
+  .controller('MainCtrl', function (racesService, trafficService, $scope) {
 
 
     trafficService.getLastTrafficIncidents()
@@ -57,5 +57,12 @@ angular.module('serviraceApp')
         // something went wrong
        console.log(response);
     });
+
+  $scope.showMessage = function(pos)
+  {
+    window.alert(pos);
+  };
+
+
 
 });

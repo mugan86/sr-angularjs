@@ -12,7 +12,7 @@ angular.module('serviraceApp')
         var config = {
          params: data
         };
-        var url = LOCALHOST+ 'traffic/get/last_incidents.php';
+        var url = LOCALHOST.v1+ 'traffic/get/last_incidents.php';
       
 
         return requestService.GetRequestParams(url, config);
@@ -25,7 +25,7 @@ angular.module('serviraceApp')
         var config = {
          params: data
         };
-        var url = LOCALHOST+ 'traffic/get/last_incidents.php';
+        var url = LOCALHOST.v1+ 'traffic/get/last_incidents.php';
       
 
         return requestService.GetRequestParams(url, config);

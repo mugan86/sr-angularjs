@@ -54,8 +54,13 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
-      .when('/contact', {
+       .when('/event', {
         templateUrl: 'views/events.html',
+        controller: 'EventCtrl',
+        controllerAs: 'event'
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',
         controllerAs: 'contact'
       })

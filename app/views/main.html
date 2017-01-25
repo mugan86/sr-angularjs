@@ -42,7 +42,38 @@
       </div>
     </div>
   </div>
-
+  <div class="col-lg-12">
+    {{raceData.length}}
+    <div class="table-responsive">          
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Edition</th>
+          <th>Data</th>
+          <th>Hour</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="p in raceData">
+          <td>{{$index+1}}</td>
+          <td><a href="{{p.race_web}}" target="_blank">{{p.race_name}}</a></td>
+          <td>{{p.race_edition}}</td>
+          <td>{{p.race_data}}</td>
+          <td>{{p.race_start_time}}</td>
+          <td>
+            <!-- https://maps.google.com/?q=<lat>,<lng> -->
+             <a href="https://maps.google.com/?q={{p.race_lat}},{{p.race_lng}}" target="_blank">
+                 {{p.race_town}}
+             </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
   <div class="col-lg-12">
       <h1 class="page-header">
           Welcome to Modern Business

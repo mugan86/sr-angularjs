@@ -9,7 +9,10 @@
  */
 angular.module('serviraceApp')
 
-.constant('LOCALHOST', 'http://mugan86.com/serviraces/api/v1/')
+.constant('LOCALHOST', {    v1: 'http://mugan86.com/serviraces/api/v1/',
+                            v2: 'http://mugan86.com/serviraces/api/v2/'
+
+                        })
 .constant('RACES', {
                         afterBefore: 'race/get/race_infov4.php',
                         championships: 'race/get/championship.php',

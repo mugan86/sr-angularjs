@@ -59,6 +59,11 @@ angular
         controller: 'ContactCtrl',
         controllerAs: 'contact'
       })
+      .when('/faq', {
+        templateUrl: 'views/faq.html',
+        controller: 'FaqCtrl',
+        controllerAs: 'faq'
+      })
       .otherwise({
         redirectTo: '/'
       });

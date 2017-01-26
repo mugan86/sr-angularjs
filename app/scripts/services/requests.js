@@ -9,6 +9,7 @@ angular.module('serviraceApp')
         console.log('Make GET REQUEST(Params): ' + url + ' PArams: ' + angular.toJson(params));
 
         return $http.get(url, params).then(function(response) {
+            console.log(angular.toJson(response));
             return responseService.Response(response);
             }, function(response) {
                 // something went wrong

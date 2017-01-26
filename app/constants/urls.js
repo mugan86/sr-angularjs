@@ -27,4 +27,5 @@ angular.module('serviraceApp')
 .constant('INFO', {
 						stats: 'info/get/stats.php'
 					})
+.constant('ERGAST', 'http://ergast.com/api/f1/drivers/alonso/circuits/monza/races.json')
 ;

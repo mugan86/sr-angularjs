@@ -59,10 +59,11 @@ angular.module('serviraceApp')
     });
             //first_data, second_data, race_name, race_type, district, distance
 
-  racesService.getNextTwoMonthsRacesData('', '', 'Apuko', 'all', 'Euskal Herria', '15')
+  //racesService.getNextTwoMonthsRacesData('', '', 'Apuko', 'all', 'Euskal Herria', '15')
+  racesService.getNextRaces()
       .then(function(data) {
       $scope.raceData = data;
-
+      console.log('races!!!' + data.length);
     }, function(response) {
         // something went wrong
        console.log(response);
@@ -71,6 +72,7 @@ angular.module('serviraceApp')
   racesService.getErgast()
       .then(function(data) {
       console.log(data);
+
 
     }, function(response) {
         // something went wrong

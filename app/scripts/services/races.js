@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('serviraceApp')
-  .service('racesService', function racesService(LOCALHOST, RACES, requestService) {
+  .service('racesService', function racesService(LOCALHOST, RACES, requestService, ERGAST) {
     return {
       getNextTwoMonthsRacesData: function(first_data, second_data, race_name, race_type, district, distance) 
       {
@@ -64,6 +64,11 @@ angular.module('serviraceApp')
         };
 
         return requestService.GetRequestParams(url, config);
+      },
+
+      getErgast: function()
+      {
+        return requestService.GetRequest(ERGAST);
       },
     };
 });

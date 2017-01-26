@@ -3,6 +3,12 @@
 angular.module('serviraceApp')
   .service('racesService', function racesService(LOCALHOST, RACES, requestService, ERGAST) {
     return {
+
+      getNextRaces: function()
+      {
+        return requestService.GetRequest('races.json');
+      },
+
       getNextTwoMonthsRacesData: function(first_data, second_data, race_name, race_type, district, distance) 
       {
 

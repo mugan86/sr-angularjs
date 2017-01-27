@@ -1,5 +1,11 @@
 <!-- PAGE HEADER -->
-<div class="page-header"><h1>AngularJS Form Validation</h1></div>
+<div class="page-header"><h1>{{'contact_with_us' | translate}}</h1></div>
+
+<label class="item item-input" >
+    <span class="input-label"> (*) {{'required_inputs' | translate}}</span>
+  </label>
+  <br/>
+      <br/>  
 
 <!-- =================================================================== -->
 <!-- FORM ============================================================== -->
@@ -11,38 +17,42 @@
 
 
   <!-- NAME -->
-  <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine}">
-      <label>Name*</label>
-      <input type="text" name="name" class="form-control" ng-model="user.name" required>
+  <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid  && !userForm.name.$pristine, 'no-errors' : userForm.name.$valid}">
+      <label>Name (*)</label>
+      <input type="text" name="name" class="form-control" ng-model="user.name" required autofocus="true">
       <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" ng-messages="userForm.name.$error" class="help-block">You name is required.</p>
-      <p>Invalid: {{userForm.name.$invalid}}</p>
+      <!--<p>Invalid: {{userForm.name.$invalid}}</p>
       <p>Pristine: {{!userForm.name.$pristine}}</p>
-      <p>Error: {{userForm.name.$error}}</p>
+      <p>Error: {{userForm.name.$error}}</p>-->
       
   </div>
-  
-  <!-- USERNAME -->
-  <!--<div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-      <label>Username</label>
-      <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
-      <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
-      <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
-  </div>-->
       
   <!-- EMAIL -->
-  <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid || !userForm.email.$pristine && userForm.email.$error && userForm.$submitted}">
-      <label>Email</label>
+  <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine,  'no-errors' : userForm.name.$valid}">
+      <label>Email (*)</label>
       <input type="email" name="email" class="form-control" ng-model="user.email" required>
-      <p ng-show="userForm.email.$invalid || !userForm.email.$pristine && userForm.email.$error && userForm.$submitted" class="help-block">Enter a valid email.</p>
-      <p ng-show="userForm.name.$invalid || !userForm.name.$pristine && userForm.name.$error && userForm.$submitted" class="help-block">You Email is required.</p>
-      <p>Invalid: {{userForm.email.$invalid}}</p>
+      <p ng-show="userForm.email.$invalid &&!userForm.email.$pristine" ng-messages="userForm.email.$error" class="help-block">Enter a valid email.</p>
+      <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" ng-messages="userForm.email.$error" class="help-block">You Email is required.</p>
+      <!--<p>Invalid: {{userForm.email.$invalid}}</p>
       <p>Pristine: {{!userForm.email.$pristine}}</p>
-      <p>Error: {{userForm.email.$error}}</p>
+      <p>Error: {{userForm.email.$error}}</p>-->
       
   </div>
 
-  <p>Submit: {{userForm.$submitted}}</p>
+  <div class="form-group" ng-class="{ 'has-error' : userForm.message.$invalid && !userForm.message.$pristine,  'no-errors' : userForm.message.$valid}">
+      <label>Message (*)</label>
+      <input type="text" name="message" class="form-control" ng-model="user.message" ng-minlength="10" required>
+      <p ng-show="userForm.message.$invalid &&!userForm.message.$pristine" ng-messages="userForm.message.$error" class="help-block">Message length min 10 chars.</p>
+      <p ng-show="userForm.message.$invalid && !userForm.message.$pristine" ng-messages="userForm.message.$error" class="help-block">Message is required.</p>
+      <!--<p>Invalid: {{userForm.message.$invalid}}</p>
+      <p>Pristine: {{!userForm.message.$pristine}}</p>
+      <p>Error: {{userForm.message.$error}}</p>-->
+      
+  </div>
+
+  <!--<p>Submit: {{userForm.$submitted}}</p>-->
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">{{'send_contact_data' | translate}}</button>
+  <br/>
   
 </form>

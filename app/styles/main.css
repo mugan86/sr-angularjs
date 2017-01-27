@@ -143,3 +143,13 @@ body {
     margin-top: 1em;
 }
 
+/********************Forms******************************/
+
+.has-error {
+  border-bottom: 3px solid red;
+}
+
+.no-errors {
+  border-bottom: 3px solid green !important;
+}
+

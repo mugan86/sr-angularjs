@@ -9,8 +9,8 @@
  */
 angular.module('serviraceApp')
 
-.constant('LOCALHOST', {    v1: 'http://mugan86.com/serviraces/api/v1/',
-                            v2: 'http://mugan86.com/serviraces/api/v2/'
+.constant('LOCALHOST', {    v1: 'https://mugan86.com/serviraces/api/v1/',
+                            v2: 'https://mugan86.com/serviraces/api/v2/'
 
                         })
 .constant('RACES', {

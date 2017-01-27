@@ -69,15 +69,6 @@ angular.module('serviraceApp')
        console.log(response);
     });
 
-  racesService.getErgast()
-      .then(function(data) {
-      console.log(data);
-
-
-    }, function(response) {
-        // something went wrong
-       console.log(response);
-    });
 
   $scope.showMessage = function(pos)
   {

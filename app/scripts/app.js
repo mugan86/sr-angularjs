@@ -59,6 +59,11 @@ angular
         controller: 'EventCtrl',
         controllerAs: 'event'
       })
+       .when('/race', {
+        templateUrl: 'views/race_details.html',
+        controller: 'RaceCtrl',
+        controllerAs: 'race'
+      })
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl',

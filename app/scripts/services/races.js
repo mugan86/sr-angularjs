@@ -2,7 +2,21 @@
 
 angular.module('serviraceApp')
   .service('racesService', function racesService(LOCALHOST, RACES, requestService, ERGAST) {
+
+    var race = [];
+
     return {
+
+      addRace: function(newObj) {
+        race = [];
+        race.push(newObj);
+        console.log('Add race' + race);
+        return '';
+      },
+
+      getRace : function(){
+          return race;
+      },
 
       getNextRaces: function()
       {

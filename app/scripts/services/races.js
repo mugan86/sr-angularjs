@@ -30,11 +30,21 @@ angular.module('serviraceApp')
         var url = LOCALHOST.v2 +'race/get/race_info_list.php';
 
         return requestService.PostRequest(url, {first_data: getTodayData(), 
-                                                  second_data: getFutureData(60), 
+                                                  second_data: getFutureData(30), 
                                                   race_name: race_name, 
                                                   distance: distance, 
                                                   race_type: race_type, 
                                                   district: district});
+      },
+      getSelectRacePhotosGallery: function(race_code, circle) 
+      {
+
+        console.log('Race Code: ' + race_code + ' / Circle? ' + circle);
+        var url = LOCALHOST.v2 +'race/get/race_photos.php';
+
+        return requestService.PostRequest(url, {race_code: race_code, 
+                                                  circle: circle 
+                                                });
       },
       getSelectRaceNearServices: function (code, category, distance, circle)
       {

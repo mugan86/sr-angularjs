@@ -8,7 +8,7 @@
  * Controller of the serviraceApp
  */
 angular.module('serviraceApp')
-  .controller('MainCtrl', function (racesService, trafficService, $scope) {
+  .controller('MainCtrl', function (racesService, trafficService, $scope, $location) {
 
 
     trafficService.getLastTrafficIncidents()
@@ -83,6 +83,19 @@ angular.module('serviraceApp')
   {
     window.alert(pos);
   };
+
+  $scope.showSelectData = function (race)
+  {
+     console.log(race.race_name);
+     console.log(angular.toJson(race));
+
+     window.localStorage.setItem("select_race", angular.toJson(race));
+
+     racesService.addRace(race);
+
+     $location.path('/race');
+     /*window.localStorage.getItem("select_race")*/
+  }
 
 
 });

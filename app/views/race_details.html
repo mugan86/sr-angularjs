@@ -2,10 +2,10 @@
 
 <div class="row">
 <br/><br/>
-<h1>{{start}} </h1>
+<h1>{{value.race_name}} </h1>
     <div class="col-sm-4 event">
       	<details>
-		  <summary>General data {{race[0].race_name}}</summary>
+		  <summary>General data {{name}} {{value.race_start_time}}</summary>
 		    <ul>
 		      <li><strong>13.3-inch LED-backlit glossy widescreen display</strong> with edge-to-edge, uninterrupted glass (1280 x 800-pixel resolution).</li>
 		      <li><strong>2.4 GHz Intel Core i5 dual-core processor</strong> with 3 MB shared L3 cache for excellent multitasking.</li>
@@ -38,4 +38,17 @@
 		      <li><strong>4 GB installed RAM</strong> (1333 MHz DDR3; supports up to 8 GB)</li>
 		    </ul>
 		</details>
-  </div>
+  	</div>
+</div>
+<div class="row">
+	<iframe frameBorder="0" scrolling="no" src="https://www.wikiloc.com/wikiloc/spatialArtifacts.do?event=view&id=15891185&measures=off&title=off&near=off&images=off&maptype=S" width="500" height="400"></iframe><div style="background-color:#fff;color:#777;font-size:11px;line-height:16px;">Powered by <a style="color:#06d;font-size:11px;line-height:16px;" target="_blank" href="https://www.wikiloc.com">Wikiloc</a></div>
+</div>
+<div class="row">
+    <div class="col-md-3 portfolio-item photo-gallery" ng-repeat="photo in photos">
+        <a href="#">
+            <img class="img-responsive" ng-src="{{photo.amazon_url}}" err-SRC="http://google.com/favicon.ico" alt="" />
+        </a>
+    </div>
+</div>
+
+

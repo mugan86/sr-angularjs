@@ -42,39 +42,60 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-12">
-    {{raceData.length}}
-    <div class="table-responsive">          
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Edition</th>
-          <th>Data</th>
-          <th>Hour</th>
-          <th>Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="p in raceData">
-        <!--href="{{p.race_web}}"-->
-          <td>{{$index+1}}</td>
-          <td><a  ng-click="showSelectData(p)" class="pointer">{{p.race_name}}</a></td>
-          <td>{{p.race_edition}}</td>
-          <td>{{p.race_data}}</td>
-          <td>{{p.race_start_time}}</td>
-          <td>
-            <!-- https://maps.google.com/?q=<lat>,<lng> -->
-             <a href="https://maps.google.com/?q={{p.race_lat}},{{p.race_lng}}" target="_blank">
-                 {{p.race_town}}
-             </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+</div>
+<div class="row">
+  <div class="col-md-9">
+            <h1 class="text-center">
+                No more tables.
+            </h1>
+            <h3 class="text-center">
+                Resize the browser screen to see how the table changes
+            </h3>
+      
+
+        <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+            <thead class="cf">
+              <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Edition</th>
+                <th>Data</th>
+                <th>Hour</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="p in raceData">
+                <td data-title="Code">{{$index+1}}</td>
+                <td data-title="Name"><a  ng-click="showSelectData(p)" class="pointer">{{p.race_name}}</a></td>
+                <td data-title="Edition">{{p.race_edition}}</td>
+                <td data-title="Data">{{p.race_data}}</td>
+                <td data-title="Hour">{{p.race_start_time}}</td>
+                <td data-title="Location"> <!-- https://maps.google.com/?q=<lat>,<lng> -->
+                  <a href="https://maps.google.com/?q={{p.race_lat}},{{p.race_lng}}" target="_blank">
+                     {{p.race_town}}
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
     </div>
+    <div class="col-md-3">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.3.7</h4>
+          </div>
+          <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+              <a href="#" class="btn btn-default">Learn More</a>
+          </div>
+      </div>
   </div>
+</div>
+<div class="row">
+  
   <div class="col-lg-12">
       <h1 class="page-header">
           Welcome to Modern Business

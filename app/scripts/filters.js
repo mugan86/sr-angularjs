@@ -23,4 +23,17 @@ angular.module('serviraceApp')
             } 
 			return text;
         };
+})
+.filter('wikiloc', function ($sce) {
+    return function(id) {
+        console.log('Resource!!!!' + id);
+      return $sce.trustAsResourceUrl('https://www.wikiloc.com/wikiloc/spatialArtifacts.do?event=view&id='+ id + '&measures=off&title=off&near=off&images=off&maptype=S');
+    };
+  })
+.filter('ibilbideak', function ($sce) {
+    return function(id) {
+        console.log('Resource (Ibilbideak)!!!!' + id);
+
+      return $sce.trustAsResourceUrl('http://mugibili.euskadi.eus/mugibili/minimap.do?id=' + id);
+    };
 });

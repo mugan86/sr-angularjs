@@ -48,11 +48,11 @@
 </div>
 
 <div class="row">
-	<div class="cover-card col-sm-2" style="background: url({{photo.amazon_url}}) no-repeat center top;background-size:cover;" ng-repeat="photo in photos">
+
+ 	<!--http://plnkr.co/edit/yBb0rNiXIaO4EGTqCAmm?p=preview Check image if exist-->
+	<div class="cover-card col-sm-2" ng-if="!photo.is404" style="background: url({{photo.amazon_url}}) no-repeat center top;background-size:cover;" ng-repeat="photo in photos" error-src ng-src="photo.amazon_url">
 		<p>
 			{{photo.photo_title}}
 		</p>
 	</div>
 </div>
-
-

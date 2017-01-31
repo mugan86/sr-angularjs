@@ -12,9 +12,9 @@ angular.module('serviraceApp')
       return {
         link: function(scope, element, attrs) {
           element.bind('error', function() {
-            if (attrs.src != attrs.errSrc) {
-              attrs.$set('src', attrs.errSrc);
-            }
+            console.log("ERROR!!!! " + index);
+            scope.photos[attrs.index].is404 = true;
+            scope.$apply();
           });
         }
       }

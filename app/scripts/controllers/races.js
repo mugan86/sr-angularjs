@@ -38,6 +38,12 @@ angular.module('serviraceApp')
                 enable: [ 'dragend' ]
                 //logic: 'emit'
               }
+          },
+          tiles: {
+            url: 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png'
+          },
+          defaults: {
+            scrollWheelZoom: true
           }
       });
     };

@@ -15,6 +15,12 @@ angular.module('serviraceApp')
                     lat: 51.505,
                     lng: -0.09,
                     zoom: 4
+                },
+                tiles: {
+                  url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                },
+                defaults: {
+                  scrollWheelZoom: false
                 }
             });
    //Carousel data

@@ -10,6 +10,13 @@
 angular.module('serviraceApp')
   .controller('MainCtrl', function (racesService, trafficService, $scope, $location) {
 
+    angular.extend($scope, {
+                london: {
+                    lat: 51.505,
+                    lng: -0.09,
+                    zoom: 4
+                }
+            });
    //Carousel data
 
    $scope.myInterval = 4000;

@@ -3,7 +3,7 @@
 <div class="row">
 <br/><br/>
 <h1>{{value.race_name}} </h1>
-    <div class="col-sm-4 event">
+    <!--<div class="col-sm-4 event">
       	<details>
 		  <summary>General data {{name}} {{value.race_start_time}}</summary>
 		    <ul>
@@ -38,16 +38,12 @@
 		      <li><strong>4 GB installed RAM</strong> (1333 MHz DDR3; supports up to 8 GB)</li>
 		    </ul>
 		</details>
-  	</div>
+  	</div>-->
 </div>
-<div class="row" ng-if="value.race_route_source == 'wikiloc'">
-	<iframe frameBorder="0" scrolling="no" ng-src="{{value.race_track_id | showWikilocRoute}}" width="45%" height="400"></iframe>
-</div>
-<div class="row" ng-if="value.race_route_source == 'ibilbideak'">
-	<iframe height="400" style="height:400px;width:45%;margin:0;" frameBorder="0" ng-src="{{ value.race_track_id | showMugibiliRoute}}"></iframe>
-</div>
-<div class="row">
-	<leaflet lf-center="london" event-broadcast="events" markers="markers" tiles="tiles" id="map-simple-map" width="100%" height="480px"></leaflet>
+<div class="row" >
+	<iframe ng-if="value.race_route_source == 'wikiloc'" frameBorder="0" scrolling="no" ng-src="{{value.race_track_id | showWikilocRoute}}" width="45%" height="440px"></iframe>
+	<iframe ng-if="value.race_route_source == 'ibilbideak'" height="400" style="height:440px;width:45%;margin:0;" frameBorder="0" ng-src="{{ value.race_track_id | showMugibiliRoute}}"></iframe>
+	<leaflet lf-center="london" event-broadcast="events" markers="markers" tiles="tiles" width="50%" height="440px"></leaflet>
 </div>
 
 <div class="row">

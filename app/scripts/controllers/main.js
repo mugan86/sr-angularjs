@@ -12,7 +12,7 @@ angular.module('serviraceApp')
 
    //Carousel data
 
-   $scope.myInterval = 2000;
+   $scope.myInterval = 4000;
 
     trafficService.getLastTrafficIncidents()
             .then(function(data) {

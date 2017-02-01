@@ -19,7 +19,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ui-leaflet'
   ])
 
 //Remove UnhandledRejection in qprovider : http://stackoverflow.com/a/40366492/3655781

@@ -10,6 +10,42 @@
 angular.module('serviraceApp')
   .controller('RaceCtrl', function ($scope, racesService) {
 
+    $scope.raceLocation = function()
+    {
+      var mainMarker = {
+                  lat: parseFloat($scope.value.race_lat),
+                  lng: parseFloat($scope.value.race_lng),
+                  focus: true,
+                  message: "Hey, drag me if you want",
+                  draggable: true
+      };
+
+      angular.extend($scope, {
+          london: {
+              lat: parseFloat($scope.value.race_lat),
+              lng: parseFloat($scope.value.race_lng),
+              zoom: 8
+          },
+          markers: {
+              mainMarker: angular.copy(mainMarker)
+          },
+          position: {
+              lat: parseFloat($scope.value.race_lat),
+              lng: parseFloat($scope.value.race_lng)
+          },
+          events: { // or just {} //all events
+              markers:{
+                enable: [ 'dragend' ]
+                //logic: 'emit'
+              }
+          }
+      });
+    };
+    $scope.$on("leafletDirectiveMarker.dragend", function(event, args){
+        $scope.position.lat = args.model.lat;
+        $scope.position.lng = args.model.lng;
+    });
+
     $scope.start = true;
     $scope.race = [];
 
@@ -19,6 +55,7 @@ angular.module('serviraceApp')
     
     $scope.name = $scope.value.race_name;
 
+    $scope.raceLocation ();
 
     racesService.getSelectRacePhotosGallery($scope.value.race_code, $scope.value.race_circle_circuit)
       .then(function(data) {

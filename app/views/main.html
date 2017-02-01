@@ -14,7 +14,7 @@
 <!-- /.row -->
 <!-- Marketing Icons Section -->
 <div class="row">
-  <div class="row carousel-holder">
+  <!--<div class="row carousel-holder">
     <div class="col-md-12">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -33,12 +33,44 @@
                   <img class="slide-image" src="http://placehold.it/1100x300" alt="">
               </div>
           </div>
-          <!--<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left"></span>
           </a>
           <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
               <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>-->
+          </a>
+      </div>
+    </div>
+  </div>-->
+  <div style="height: 305px">
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <!--<div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{slide.id}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </div>-->
+      <div uib-slide index="0">
+        <img ng-src="http://placehold.it/1100x300" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide 0</h4>
+          <p>Text slide</p>
+        </div>
+      </div>
+      <div uib-slide  index="1">
+        <img ng-src="http://placehold.it/1100x300" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide 1</h4>
+          <p>Text 1</p>
+        </div>
+      </div>
+      <div uib-slide index="2">
+        <img ng-src="http://placehold.it/1100x300" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide 2</h4>
+          <p>Text 2</p>
+        </div>
       </div>
     </div>
   </div>

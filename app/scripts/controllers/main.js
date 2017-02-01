@@ -10,6 +10,9 @@
 angular.module('serviraceApp')
   .controller('MainCtrl', function (racesService, trafficService, $scope, $location) {
 
+   //Carousel data
+
+   $scope.myInterval = 2000;
 
     trafficService.getLastTrafficIncidents()
             .then(function(data) {
@@ -86,7 +89,9 @@ angular.module('serviraceApp')
 
      $location.path('/race');
      /*window.localStorage.getItem("select_race")*/
-  }
+  };
+
+
 
 
 });

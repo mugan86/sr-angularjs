@@ -16,7 +16,7 @@ angular.module('serviraceApp')
                   lat: parseFloat($scope.value.race_lat),
                   lng: parseFloat($scope.value.race_lng),
                   focus: true,
-                  message: "Hey, drag me if you want",
+                  message: $scope.value.race_name + " (" + $scope.value.race_town,
                   draggable: true
       };
 

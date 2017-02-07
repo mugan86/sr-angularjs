@@ -9,7 +9,6 @@
  */
 angular.module('serviraceApp')
   .controller('RaceCtrl', function ($scope, racesService) {
-
     $scope.raceLocation = function()
     {
       var mainMarker = {
@@ -17,7 +16,8 @@ angular.module('serviraceApp')
                   lng: parseFloat($scope.value.race_lng),
                   focus: true,
                   message: $scope.value.race_name + " (" + $scope.value.race_town,
-                  draggable: true
+                  //message: "<span><a ng-click='dosomething()'>" + $scope.value.race_name + " (" + $scope.value.race_town + "</a></span>",
+                  draggable: false
       };
 
       angular.extend($scope, {
